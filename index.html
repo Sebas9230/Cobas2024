@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interactivo - Plataforma SWORD COBAS 48</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <nav class="sidebar">
+            <ul id="menu-steps">
+                <button id="reproducir-intro" class="intro-button-barra">Reproducir intro</button>
+                <li><a href="#paso-1">Paso 1: Ingresar al servidor</a></li>
+                <li><a href="#paso-2">Paso 2: Comenzar un ejercicio</a></li>
+                <li><a href="#paso-3">Paso 3: Unirse a ejercicio</a></li>
+                <li><a href="#paso-4">Paso 4: Disposición pantalla</a></li>
+                <li><a href="#paso-5">Paso 5: Manejo de unidades</a></li>
+                <li><a href="#paso-6">Paso 6: Iconos de información 1</a></li>
+                <li><a href="#paso-7">Paso 7: Iconos de información 2</a></li>
+                <li><a href="#paso-8">Paso 8: Terreno</a></li>
+                <li><a href="#paso-9">Paso 9: Herramientas 1</a></li>
+                <li><a href="#paso-10">Paso 10: Herramientas 2</a></li>
+                <li><a href="#paso-11">Paso 11: Herramientas 3</a></li>
+                <li><a href="#paso-12">Paso 12: Tooltip</a></li>
+                <li><a href="#paso-13">Paso 13: Fuego directo</a></li>
+                <li><a href="#paso-14">Paso 14: Fuego indirecto</a></li>
+                <li><a href="#paso-15">Paso 15: Muchedumbres</a></li>
+                <li><a href="#paso-16">Paso 16: Barra de herramientas de terreno</a></li>
+            </ul>
+        </nav>
+
+
+
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Banner -->
+            <div class="banner">
+                <img src="pictures/banner.jpg" alt="Banner de la plataforma SWORD COBAS 48">
+            </div>
+
+            <header>
+                <h1>Manual Interactivo - Plataforma SWORD COBAS 48</h1>
+            </header>
+
+            
+            <!-- Botón para reproducir el video de introducción -->
+            <!--<button id="reproducir-intro" class="intro-button">Reproducir intro</button>-->
+
+            <div class="search-container">
+                <img src="pictures/soldado.png" alt="Soldado" class="search-icon">
+                <input type="text" id="searchInput" placeholder="Filtrar contenido..." onkeyup="buscarContenido()">
+            </div>
+
+
+            <!-- Contenedor de la imagen en pantalla completa -->
+            <div id="fullscreen-container" class="fullscreen-container" style="display: none;">
+                <img src="pictures/PortadaManual.jpg" alt="Portada del Manual" id="fullscreen-image">
+                <button id="close-button" class="close-button">X</button>
+            </div>
+
+            <!-- Video MilitarTalking en la esquina inferior derecha sin audio y en bucle -->
+            <video id="militar-video" width="300" height="200" muted loop
+                style="display:none; position: fixed; bottom: 10px; right: 10px; z-index: 1001;">
+                <source src="pictures/MilitarTalking.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+
+            <!-- Video emergente -->
+            <div id="video-popup" class="video-popup">
+                <video id="motivacion-video" controls autoplay>
+                    <source src="pictures/MotivacionLigero.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <button id="close-video" class="close-button">X</button>
+            </div>
+
+            <section id="paso-1">
+                <h2>Paso 1: Ingresar al servidor</h2>
+                <div class="image-container">
+                    <img id="img-paso-1" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Damos clic en el sistema SWORD para iniciar sesión.</p>
+                <video id="video-paso-1" width="800" height="600">
+                    <source src="pictures/Paso1.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-1')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-1', 'video-paso-1')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-1" class="detalle" style="display: none;">
+                    <p>Iniciar sesión en el servidor para acceder a la plataforma SWORD.</p>
+                    <p>- Adaptar: Sirve para crear el modelo de las unidades</p>
+                    <p>- Preparar: Nos proporciona el relieve al terreno</p>
+                    <p>- Iniciar ejercicio: Es la visualización y desarrollo del juego</p>
+                    <p>- Revisar: Supervisa las acciones de las fuerzas</p>
+                </div>
+
+
+            </section>
+
+            <section id="paso-2">
+                <h2>Paso 2: Comenzar un ejercicio</h2>
+                <div class="image-container">
+                    <img id="img-paso-2" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Para iniciar un ejercicio, el usuario tiene que elegir un ejercicio y un perfil</p>
+                <video id="video-paso-2" width="800" height="600">
+                    <source src="pictures/Paso2.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-2')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-2', 'video-paso-2')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-2" class="detalle" style="display: none;">
+                    <p>En la aplicación frontend de SWORD, en el menú Jugar seleccione Iniciar</p>
+                    <p>Seleccione un ejercicio y haga clic en Iniciar.</p>
+                    <p>Seleccione el perfil a utilizar y Aceptar: Se abrirá la aplicación Juegos con el ejercicio
+                        seleccionado en la pantalla.</p>
+                </div>
+            </section>
+
+            <section id="paso-3">
+                <h2>Paso 3: Unirse a ejercicio</h2>
+                <div class="image-container">
+                    <img id="img-paso-3" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Comienza el ejercicio para la simulación de las fuerzas.</p>
+                <video id="video-paso-3" width="800" height="600">
+                    <source src="pictures/Paso3.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-3')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-3', 'video-paso-3')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-3" class="detalle" style="display: none;">
+                    <p>Seleccionamos iniciar y damos clic en la pestaña Unirse.</p>
+                    <p>Se despliega la pantalla para ingresar una dirección IP que nos dará acceso a la plataforma.</p>
+                    <p>Esta IP es proporcionada por los monitores del sistema Mando y Control.</p>
+                    <p>Se despliegan los diferentes perfiles y escogemos el perfil en el que vamos a trabajar.</p>
+                    <p>Se despliega el mapa donde se encuentran las tropas.</p>
+                </div>
+            </section>
+
+            <section id="paso-4">
+                <h2>Paso 4: Disposición pantalla</h2>
+                <div class="image-container">
+                    <img id="img-paso-4" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>La herramienta de juegos está organizada como cualquier aplicación tradicional de Windows.</p>
+                <video id="video-paso-4" width="800" height="600">
+                    <source src="pictures/Paso4.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-4')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-4', 'video-paso-4')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-4" class="detalle" style="display: none;">
+                    <p>En la pantalla encontramos:</p>
+                    <p>- Una barra de menú</p>
+                    <p>- Varias barras de herramientas</p>
+                    <p>- Mapa central</p>
+                    <p>- Paneles acoplados</p>
+                    <p>La configuración se puede guardar y restaurar</p>
+                </div>
+            </section>
+
+            <section id="paso-5">
+                <h2>Paso 5: Manejo de unidades</h2>
+                <div class="image-container">
+                    <img id="img-paso-5" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Una vez iniciado el servidor se requieren las siguientes acciones para el manejo de unidades.</p>
+                <video id="video-paso-5" width="800" height="600">
+                    <source src="pictures/Paso5.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-5')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-5', 'video-paso-5')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-5" class="detalle" style="display: none;">
+                    <p>Podemos observar las capacidades que tendría la fuerza.</p>
+                    <p>Se puede observar el disponible de las fuerzas.</p>
+                    <p>Una vez verificadas las unidades de maniobra azul y rojo, procedemos a designar tareas y órdenes
+                        a las unidades.</p>
+                    <p>Se despliegan diversas tareas que podrían ejecutar las unidades.</p>
+                    <p>Una vez asignada la orden, designamos el objetivo y la ruta en la que va a moverse esa unidad.
+                    </p>
+                </div>
+            </section>
+
+            <section id="paso-6">
+                <h2>Paso 6: Iconos de información 1</h2>
+                <div class="image-container">
+                    <img id="img-paso-6" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Iconos Parte 1.</p>
+                <video id="video-paso-6" width="800" height="600">
+                    <source src="pictures/Paso6.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-6')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-6', 'video-paso-6')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-6" class="detalle" style="display: none;">
+                    <p>Reloj: Muestra la hora que se vive en el ejercicio</p>
+                    <p>Capacidad de combate: Muestra la capacidad que tiene la unidad seleccionada</p>
+                </div>
+            </section>
+
+            <section id="paso-7">
+                <h2>Paso 7: Iconos de información 2</h2>
+                <div class="image-container">
+                    <img id="img-paso-7" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Iconos Parte 2.</p>
+                <video id="video-paso-7" width="800" height="600">
+                    <source src="pictures/Paso7.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-7')">Ver más detalles</button>
+                    <button onclick="reproducirExplicacion('detalle-7', 'video-paso-7')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-7" class="detalle" style="display: none;">
+                    <p>Se da click en icono del alcance de las armas y se observa el radio en el mapa </p>
+                    <p>Se da click en la pestaña ventanas y después en la opción línea de tiempo se nos porporciona las
+                        actividades diarias o semanales de las unidades</p>
+            </section>
+
+            <section id="paso-8">
+                <h2>Paso 8: Terreno</h2>
+                <div class="image-container">
+                    <img id="img-paso-8" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Un Terreno SWORD se divide en 3 capas complementarias.</p>
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso8.png" alt="Imagen Paso 8" width="258" height="185">
+                    <img src="pictures/Paso8a.png" alt="Imagen Paso 8" width="258" height="185">
+                    <img src="pictures/Paso8b.png" alt="Imagen Paso 8" width="258" height="185">
+                </div>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-8')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-8')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-8" class="detalle" style="display: none;">
+                    <p>
+                        Un Terreno se divide en 3 capas complementarias:
+                        Una capa VECTORIAL que define el tipo de terreno en cada punto del mapa.
+                        Una capa de ELEVACIÓN que define el relieve del terreno
+                        Una capa RÁSTER, una imagen que no influye en la simulación pero que puede proporcionar
+                        información adicional a los controladores.
+                    </p>
+                    <p>
+                        Mediante el menú Mostrar/preferencias, es posible personalizar:
+                        La transparencia de las diferentes capas y escalas
+                        Colores y formatos, etc.
+                        Si mostrar o no un renderizado vectorial personalizado (mapnik)
+                    </p>
+                </div>
+            </section>
+
+            <section id="paso-9">
+                <div class="image-container">
+                    <img id="img-paso-9" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <h2>Paso 9: Herramientas 1</h2>
+                <p>Parte 1 Herramientas de visualización de unidades.</p>
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso9.png" alt="Imagen Paso 9" width="167" height="159">
+                    <img src="pictures/Paso9a.png" alt="Imagen Paso 9" width="167" height="159">
+                    <img src="pictures/Paso9b.png" alt="Imagen Paso 9" width="167" height="159">
+                </div>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-9')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-9')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-9" class="detalle" style="display: none;">
+                    <p>
+                        Modo 2D y 3D
+                        El modo 3D requiere que exista al menos una capa ráster
+                    </p>
+                    <p>
+                        Neblina de guerra
+                    </p>
+                    <p>
+                        Agregar datos ráster
+                        Añadir dinámicamente capas ráster durante el juego
+                    </p>
+                </div>
+            </section>
+
+            <section id="paso-10">
+                <h2>Paso 10: Herramientas 2</h2>
+                <div class="image-container">
+                    <img id="img-paso-10" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Parte 2 Herramientas GIS.</p>
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso10.png" alt="Imagen Paso 10" width="242" height="390">
+                    <img src="pictures/Paso10a.png" alt="Imagen Paso 10" width="242" height="390">
+                </div>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-10')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-10')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-10" class="detalle" style="display: none;">
+                    <p>Para ver las curvas de nivel, seleccionar color, distancia y marque la casilla.</p>
+                </div>
+            </section>
+
+            <section id="paso-11">
+                <h2>Paso 11: Herramientas 3</h2>
+                <div class="image-container">
+                    <img id="img-paso-11" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Parte 3 Herramientas de unidades</p>
+                <img src="pictures/Paso11.png" alt="Imagen Paso 11" width="800" height="600">
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-11')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-11')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-11" class="detalle" style="display: none;">
+                    <p>
+                        La mayoría de estas herramientas de visualización se pueden definir para:
+                        Seleccionado: solo la entidad seleccionada
+                        Superior seleccionado: la entidad seleccionada y sus subordinados
+                        Controlado: aquellas unidades que pueden ser controladas por el perfil
+                        Apagado: Nunca
+                        Encendido: Siempre (tenga cuidado con la sobrecarga de la pantalla)
+                    </p>
+                </div>
+                <h2>Iconos</h2>
+                <p>Haz click para escuchar la descripción</p>
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso11a.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11a')">
+                    <img src="pictures/Paso11b.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11b')">
+                    <img src="pictures/Paso11c.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11c')">
+                    <img src="pictures/Paso11d.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11d')">
+                    <img src="pictures/Paso11e.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11e')">
+                    <img src="pictures/Paso11f.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11f')">
+                    <img src="pictures/Paso11g.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11g')">
+                    <img src="pictures/Paso11h.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11h')">
+                    <img src="pictures/Paso11i.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11i')">
+                    <img src="pictures/Paso11j.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11j')">
+                    <img src="pictures/Paso11k.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11k')">
+                    <img src="pictures/Paso11l.png" alt="Imagen Paso 11" width="37" height="33"
+                        onclick="reproducirAudio('detalle-11l')">
+                </div>
+                <div id="detalle-11a" class="detalle" style="display: none;">
+                    <p>
+                        Líneas de visión
+                        El color de la línea indica el nivel de detección(Identificado = púrpura, Reconocido = púrpura
+                        claro, Detectado = azul)
+                    </p>
+                </div>
+                <div id="detalle-11b" class="detalle" style="display: none;">
+                    <p>
+                        Conos de visión
+                        Permite ver el alcance máximo de los sensores a bordo de una unidad.
+                        La velocidad actual y los factores humanos (fatiga, postura, etc.) afectan al rango del sensor.
+                    </p>
+                </div>
+                <div id="detalle-11c" class="detalle" style="display: none;">
+                    <p>
+                        Superficies de visión
+                        Identificado = blanco, Reconocido = azul claro, Detectado = azul
+                        Permite ver las superficies de detección, reconocimiento e identificación de los sensores
+                        combinados de una unidad.
+                        Los cálculos que conducen a la visualización de las superficies de visión combinan todos los
+                        sensores de la unidad, añaden la influencia del terreno, pero no tienen en cuenta la luz del día
+                        ni el tamaño del objetivo.
+                    </p>
+                </div>
+                <div id="detalle-11d" class="detalle" style="display: none;">
+                    <p>
+                        Alcance de armas
+                        Permite activar/desactivar la visualización de los rangos de armas.
+                    </p>
+                    <p>
+                        Disparo directo:
+                        La capacidad armamentística de la unidad determina su alcance, dependiendo de la probabilidad de
+                        impacto (PI) y del tamaño del objetivo (desde pesado/Heavy hasta sigiloso/stealth), y se
+                        representará con una línea blanca de puntos.
+                        Estos valores están configurados por defecto en 50 (PI) y Heavy (Size), lo que significa que la
+                        unidad seleccionada tendrá un 50% de probabilidad de golpear una unidad de gran tamaño en la
+                        línea de puntos.
+                        Estos ajustes pueden ser cambiados en las preferencias del sistema (haga clic en Configuración y
+                        Preferencias, luego vaya a la sección Alcance de armas).
+                    </p>
+                    <p>
+                        Fuego indirecto:
+                        El alcance del fuego indirecto se muestra como un área, desde el punto seguro más cercano hasta
+                        el punto más lejano posible, y por lo tanto está representado normalmente por un disco.
+                        Puede utilizarse el arma de la unidad con el mayor alcance (por defecto), o especificar un arma
+                        de una lista desplegable en la sección de configuración de Alcance de armas.
+                    </p>
+                </div>
+                <div id="detalle-11e" class="detalle" style="display: none;">
+                    <p>
+                        Colores indicadores de fuego
+                        Permite elegir cómo se muestran las líneas de fuego:
+                        Predeterminado: Todas las líneas son rojas, siempre
+                        Bandos: Las líneas tendrán el color de cada bando
+                        Unidades: Las líneas tendrán el color de las unidades individuales
+                        Reglas: Una combinación de filtros, definidos en las preferencias, sección Colores disparo
+
+                    </p>
+                </div>
+                <div id="detalle-11f" class="detalle" style="display: none;">
+                    <p>
+                        Rutas
+                        Permite controlar cómo mostrar las rutas planificadas de las unidades y ver cómo se modifican
+                        para adaptarse a las condiciones cambiantes de la simulación
+
+                    </p>
+                </div>
+                <div id="detalle-11g" class="detalle" style="display: none;">
+                    <p>
+                        Rutas cubiertas
+                        Permite controlar cómo mostrar las rutas ya realizadas para las unidades de su elección.
+
+                    </p>
+                </div>
+                <div id="detalle-11h" class="detalle" style="display: none;">
+                    <p>
+                        Dirección
+                        Muestra la dirección en la que se mueven las unidades.
+                        La flecha indica la dirección en la que se encuentra la unidad cuando se detiene.
+
+                    </p>
+                </div>
+                <div id="detalle-11i" class="detalle" style="display: none;">
+                    <p>
+                        Detalle de la Unidad
+                        Se puede optar por mostrar la siguiente información
+                        que describe el estado actual de una unidad:
+                        Marcador de ubicación,
+                        Barra de vida,
+                        Candado de vinculación,
+                        Texto e imágenes definidas por el usuario, que normalmente proporcionan su nombre y velocidad,
+                        denominados Complementos o Decoraciones,
+                        Estado
+
+                    </p>
+                </div>
+
+                <div id="detalle-11j" class="detalle" style="display: none;">
+                    <p>
+                        Perímetro mínimo convexo
+                        estimación aproximada del terreno ocupado
+                    </p>
+                </div>
+
+                <div id="detalle-11k" class="detalle" style="display: none;">
+                    <p>
+                        Misión actual
+                        Muestra la misión que está ejecutando la unidad y
+                        sus parámetros
+
+                    </p>
+                </div>
+
+                <div id="detalle-11l" class="detalle" style="display: none;">
+                    <p>
+                        Estado decisional
+                        Relación de fuerzas de la unidad baja.
+                        La unidad está en la primera línea de un ataque concertado contra el enemigo. Las unidades están
+                        bajo las órdenes de un autómata.
+                        Las líneas diagonales a través de la unidad indican que ha sido destruida tácticamente.
+                    </p>
+                </div>
+
+            </section>
+
+            <section id="paso-12">
+                <h2>Paso 12: Tooltip</h2>
+                <div class="image-container">
+                    <img id="img-paso-12" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Descripción emergente.</p>
+                <img src="pictures/Paso12.png" alt="Imagen Paso 12" width="702" height="438">
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-12')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-12')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-12" class="detalle" style="display: none;">
+                    <p>Todos los elementos mostrados en el mapa tienen un tooltip, que muestra información sobre el
+                        elemento
+                        El tooltip aparece cada vez que se deja el ratón unos segundos encima del elemento.</p>
+                </div>
+            </section>
+
+            <section id="paso-13">
+                <h2>Paso 13: Fuego directo</h2>
+                <div class="image-container">
+                    <img id="img-paso-13" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Fuego directo</p>
+                <img src="pictures/Paso13.png" alt="Imagen Paso 13" width="800" height="600">
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso13a.png" alt="Imagen Paso 13" width="167" height="159">
+                    <img src="pictures/Paso13b.png" alt="Imagen Paso 13" width="167" height="159">
+                </div>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-13')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-13')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-13" class="detalle" style="display: none;">
+                    <p>
+                        Los disparos directos se representan con flechas desde el tirador hasta el objetivo.
+                        El resultado se muestra en la ventana de Reportes
+                    </p>
+                    <p>
+                        Si la opción Detalles de unidad - Estado está seleccionado, las unidades muertas se muestran en
+                        el mapa con un cráneo
+                    </p>
+                </div>
+            </section>
+
+            <section id="paso-14">
+                <h2>Paso 14: Fuego indirecto</h2>
+                <div class="image-container">
+                    <img id="img-paso-14" class="random-image" alt="Imagen cabecera paso 1">
+                </div>
+                <p>Artillería, orden fragmentaria</p>
+                <div class="imagenesRejilla">
+                    <img src="pictures/Paso14.png" alt="Imagen Paso 13" width="202" height="192">
+                    <img src="pictures/Paso14a.png" alt="Imagen Paso 13" width="202" height="192">
+                    <img src="pictures/Paso14b.png" alt="Imagen Paso 13" width="202" height="192">
+                </div>
+                <div class="buttons">
+                    <button onclick="mostrarDetalle('detalle-14')">Ver más detalles</button>
+                    <button onclick="reproducirAudio('detalle-14')">Reproducir explicación</button>
+                </div>
+                <div id="detalle-14" class="detalle" style="display: none;">
+                    <p>El punto de destino se muestra de la siguiente manera:
+                        Para un explosivo, por un área de color rojo que representa el área de impacto y un área roja
+                        más transparente que representa la zona de neutralización
+                        Para municiones de humo mediante un área gris
+                        Para municiones de iluminación mediante un área blanca
+                    </p>
+                </div>
+
+                <section id="paso-15">
+                    <h2>Paso 15: Muchedumbres</h2>
+                    <div class="image-container">
+                        <img id="img-paso-15" class="random-image" alt="Imagen cabecera paso 1">
+                    </div>
+                    <p>Visualización de muchedumbres</p>
+                    <img src="pictures/Paso15.png" alt="Imagen Paso 15" width="255" height="110">
+                    <div class="buttons">
+                        <button onclick="mostrarDetalle('detalle-15')">Ver más detalles</button>
+                        <button onclick="reproducirAudio('detalle-15')">Reproducir explicación</button>
+                    </div>
+                    <div id="detalle-15" class="detalle" style="display: none;">
+                        <p>
+                            Las muchedumbres se muestran en el mapa:
+                            Como una cinta que representa una muchedumbre en movimiento
+                            Como un disco de color que representa un área donde hay una concentración de personas y cuyo
+                            tamaño depende del número de personas y de la densidad
+                        </p>
+                        <p>
+                            El color del borde de la muchedumbre depende de la actitud
+                            Azul: tranquilo
+                            Verde: agitado
+                            Amarillo: nervioso
+                            Rojo: agresivo
+                        </p>
+                        <p>
+                            El lado izquierdo del disco muestra el bando al que pertenece la muchedumbre
+                            El lado derecho del disco muestra la salud de la muchedumbre
+                        </p>
+                    </div>
+                </section>
+
+                <section id="paso-16">
+                    <h2>Paso 16: Barra de herramientas de terreno</h2>
+                    <div class="image-container">
+                        <img id="img-paso-16" class="random-image" alt="Imagen cabecera paso 1">
+                    </div>
+                    <p>Heramientas de terreno.</p>
+                    <img src="pictures/Paso16.png" alt="Imagen Paso 16" width="247" height="75">
+                    <div class="buttons">
+                        <button onclick="mostrarDetalle('detalle-16')">Ver más detalles</button>
+                        <button onclick="reproducirAudio('detalle-16')">Reproducir explicación</button>
+                    </div>
+                    <div id="detalle-16" class="detalle" style="display: none;">
+                        <p>
+                            La barra de herramientas Terreno permite controlar la visualización de algunos elementos del
+                            terreno.
+
+                        <p>
+                            Texto pequeño
+                            Datos vectoriales
+                        </p>
+
+                        <p>
+                            Texto grande
+                            Datos vectoriales
+                        </p>
+
+                        <p>
+
+                        </p>
+                        Bloques urbanos
+                        Permite controlar la visualización de los bloques urbanos creados. Puede ordenar la población
+                        dentro de los bloques urbanos por densidad u ocupación (si se especifica).
+                        </p>
+                    </div>
+                </section>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
